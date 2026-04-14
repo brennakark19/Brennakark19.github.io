@@ -41,16 +41,6 @@
             margin-bottom: 10px;
         }
 
-        /* 🔥 NEW IMAGE STYLE */
-        img {
-            margin-top: 15px;
-            border-radius: 10px;
-            max-width: 80%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         a {
             color: #4da6ff;
             text-decoration: none;
@@ -58,6 +48,36 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .image-grid div {
+            background: #1b1b1b;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-grid p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #cccccc;
         }
 
     </style>
@@ -71,24 +91,40 @@
     <h2>About Me</h2>
     <div class="card">
         <p>
-            I am an engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity. 
+            I am an engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity.
             I enjoy building, designing, and solving real-world problems through technical projects and manufacturing processes.
         </p>
     </div>
 
     <h2>Projects</h2>
 
-    <!-- 🔥 UPDATED CNC SECTION WITH IMAGES -->
     <div class="card">
         <h3>CNC Machining Projects</h3>
 
-        <img src="legoJPG.jpg">
-        <img src="CubeJPG.jpg">
-        <img src="TopHammerJPG.jpg">
-        <img src="PawnJPG.jpg">
+        <div class="image-grid">
+            <div>
+                <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
+                <p>Aluminum LEGO Brick</p>
+            </div>
+
+            <div>
+                <img src="CubeJPG.jpg" alt="Turner’s Cube">
+                <p>Turner’s Cube</p>
+            </div>
+
+            <div>
+                <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                <p>Mini Thor’s Hammer</p>
+            </div>
+
+            <div>
+                <img src="PawnJPG.jpg" alt="Chess Piece">
+                <p>Chess Piece</p>
+            </div>
+        </div>
 
         <p>
-            Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning. 
+            Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning.
             Applied setup planning, precision tolerancing, and CAD/CAM workflows to ensure accuracy and functionality.
         </p>
     </div>
@@ -96,7 +132,7 @@
     <div class="card">
         <h3>Robotic Arm – Gen-1</h3>
         <p>
-            Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing. 
+            Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.
             Integrated control systems and mechanical design to achieve smooth motion and functional performance.
         </p>
     </div>
