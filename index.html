@@ -1,177 +1,381 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Brenna Kark Portfolio</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brenna Kark | Engineering Portfolio</title>
     <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #0a0a0a;
-            color: white;
-            text-align: center;
             margin: 0;
-            padding: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(to bottom, #050505, #111111);
+            color: white;
         }
 
-        h1 {
-            font-size: 55px;
-            margin-bottom: 5px;
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 18px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
-        h2 {
-            margin-top: 50px;
-            font-size: 32px;
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        p {
-            color: #d0d0d0;
+        nav a {
+            color: #d9d9d9;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px 90px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            margin: 0 0 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: #c8c8c8;
+            font-size: 22px;
+            max-width: 850px;
+            margin: 0 auto 30px;
             line-height: 1.6;
         }
 
-        .card {
-            background: #151515;
-            padding: 25px;
-            margin: 20px auto;
-            width: 70%;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: #4da6ff;
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 999px;
             text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
         }
 
-        a:hover {
+        .btn-primary {
+            background: white;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #e8e8e8;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.10);
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .about-text {
+            color: #d2d2d2;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .project-card p {
+            color: #d0d0d0;
+            line-height: 1.7;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #7cb8ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
             text-decoration: underline;
         }
 
-        .image-grid {
+        .featured-images {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
+            gap: 16px;
+            margin-top: 22px;
         }
 
-        .image-grid div {
-            background: #1b1b1b;
+        .featured-images div {
+            background: rgba(255,255,255,0.04);
+            border-radius: 18px;
             padding: 10px;
-            border-radius: 10px;
         }
 
-        .image-grid img {
+        .featured-images img {
             width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+            border-radius: 14px;
             display: block;
+            transition: transform 0.3s ease;
         }
 
-        .image-grid img:hover {
-            transform: scale(1.05);
+        .featured-images img:hover {
+            transform: scale(1.03);
         }
 
-        .image-grid p {
-            margin-top: 10px;
+        .featured-images p {
             font-size: 14px;
-            color: #cccccc;
+            color: #cfcfcf;
+            text-align: center;
+            margin: 10px 0 2px;
         }
 
+        .skills-card {
+            text-align: center;
+            color: #d2d2d2;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        .contact-card {
+            text-align: center;
+        }
+
+        .contact-card p {
+            color: #d2d2d2;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: #8e8e8e;
+            padding: 40px 20px 55px;
+            font-size: 14px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .featured-images {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
-
 <body>
 
-    <h1>Brenna Kark</h1>
-    <p>Mechanical Manufacturing Engineering Technology Student</p>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am an engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity.
-            I enjoy building, designing, and solving real-world problems through technical projects and manufacturing processes.
-        </p>
-    </div>
+    <section class="hero">
+        <h1>Brenna Kark</h1>
+        <p>Mechanical Manufacturing Engineering Technology student focused on CNC machining, CAD/CAM, robotics, circuits, and cybersecurity.</p>
 
-    <h2>Projects</h2>
+        <div class="button-row">
+            <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-secondary" href="#projects">View Projects</a>
+        </div>
+    </section>
 
-    <div class="card">
-        <h3>CNC Machining Projects</h3>
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p class="about-text">
+                I am an engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuit design, and cybersecurity. I enjoy building, designing, and solving real-world problems through technical projects, prototyping, and manufacturing processes.
+            </p>
+        </div>
+    </section>
 
-        <div class="image-grid">
-            <div>
-                <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
-                <p>Aluminum LEGO Brick</p>
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="card" style="margin-bottom: 26px;">
+            <h3 style="text-align:center; font-size: 28px; margin-top: 0;">CNC Machining Projects</h3>
+
+            <div class="featured-images">
+                <div>
+                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
+                    <p>Aluminum LEGO Brick</p>
+                </div>
+                <div>
+                    <img src="CubeJPG.jpg" alt="Turner’s Cube">
+                    <p>Turner’s Cube</p>
+                </div>
+                <div>
+                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                    <p>Mini Thor’s Hammer</p>
+                </div>
+                <div>
+                    <img src="PawnJPG.jpg" alt="Chess Piece">
+                    <p>Chess Piece</p>
+                </div>
             </div>
 
-            <div>
-                <img src="CubeJPG.jpg" alt="Turner’s Cube">
-                <p>Turner’s Cube</p>
-            </div>
+            <p style="color:#d0d0d0; line-height:1.8; text-align:center; max-width:850px; margin: 25px auto 0;">
+                Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning. Applied setup planning, precision tolerancing, surface finish control, and CAD/CAM workflows to ensure accuracy and functionality.
+            </p>
 
-            <div>
-                <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
-                <p>Mini Thor’s Hammer</p>
-            </div>
-
-            <div>
-                <img src="PawnJPG.jpg" alt="Chess Piece">
-                <p>Chess Piece</p>
-            </div>
+            <p style="text-align:center;">
+                <a class="project-link" href="cnc-projects.html">View Full CNC Project Page</a>
+            </p>
         </div>
 
-        <p>
-            Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning.
-            Applied setup planning, precision tolerancing, and CAD/CAM workflows to ensure accuracy and functionality.
-        </p>
-    </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Robotic Arm – Gen-1</h3>
+                <p>Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.</p>
+                <a class="project-link" href="robotic-arm.html">View Project</a>
+            </div>
 
-    <div class="card">
-        <h3>Robotic Arm – Gen-1</h3>
-        <p>
-            Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.
-            Integrated control systems and mechanical design to achieve smooth motion and functional performance.
-        </p>
-    </div>
+            <div class="project-card">
+                <h3>Circuits & PCB Design</h3>
+                <p>Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, simulation, and testing using KiCad, LTSpice, and lab instrumentation.</p>
+                <a class="project-link" href="circuits.html">View Project</a>
+            </div>
 
-    <div class="card">
-        <h3>Circuits & PCB Design</h3>
-        <p>
-            Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, and testing using KiCad, LTSpice, and lab instrumentation.
-        </p>
-    </div>
+            <div class="project-card">
+                <h3>Cybersecurity</h3>
+                <p>Studied cryptography, system security, vulnerability analysis, and secure coding practices, applying Python for security-focused tasks.</p>
+                <a class="project-link" href="cybersecurity.html">View Project</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-        <h3>Cybersecurity</h3>
-        <p>
-            Studied cryptography, system security, vulnerability analysis, and secure coding practices, applying Python for basic security-focused tasks.
-        </p>
-    </div>
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="card skills-card">
+            Java, Python, R, Siemens NX, Inventor, MATLAB, LTSpice, KiCad, CNC machining, CAD/CAM, 3D printing, laser cutting, PCB design, soldering, cryptography, system security, vulnerability analysis, secure coding concepts
+        </div>
+    </section>
 
-    <h2>Technical Skills</h2>
-    <div class="card">
-        <p>
-            Java, Python, R, Siemens NX, Inventor, MATLAB, LTSpice, KiCad, CNC machining, CAD/CAM, 3D printing, laser cutting, PCB design, soldering, cybersecurity concepts
-        </p>
-    </div>
+    <section id="resume" class="section">
+        <h2 class="section-title">Resume</h2>
+        <div class="card" style="text-align:center;">
+            <p style="color:#d2d2d2; font-size:18px;">Download my current resume below.</p>
+            <div class="button-row">
+                <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Open Resume PDF</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>Resume</h2>
-    <div class="card">
-        <p>
-            <a href="Brenna_Kark_Resume.pdf" target="_blank">Download My Resume</a>
-        </p>
-    </div>
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="card contact-card">
+            <p>Email: brenna.kark19@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/brenna-kark-55332b329" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    </section>
 
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: Brenna.Kark19@gmail.com</p>
-        <p>LinkedIn: www.linkedin.com/in/brenna-kark-55332b329
-
-</p>
-    </div>
+    <footer>
+        © 2026 Brenna Kark. Built with GitHub Pages.
+    </footer>
 
 </body>
 </html>
