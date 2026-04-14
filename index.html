@@ -2,58 +2,127 @@
 <html>
 <head>
     <title>Brenna Kark Portfolio</title>
+
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: #0a0a0a;
             color: white;
             text-align: center;
+            margin: 0;
             padding: 40px;
         }
 
-        h1 { font-size: 50px; }
-        h2 { margin-top: 40px; }
-        p { color: #ccc; }
+        h1 {
+            font-size: 55px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 32px;
+        }
+
+        p {
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
 
         .card {
-            background: #111;
-            padding: 20px;
+            background: #151515;
+            padding: 25px;
             margin: 20px auto;
-            width: 60%;
-            border-radius: 10px;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin-top: 15px;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
 <body>
 
-<h1>Brenna Kark</h1>
-<p>Mechanical Manufacturing Engineering Technology</p>
+    <h1>Brenna Kark</h1>
+    <p>Mechanical Manufacturing Engineering Technology Student</p>
 
-<h2>Projects</h2>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am an engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity. 
+            I enjoy building, designing, and solving real-world problems through technical projects and manufacturing processes.
+        </p>
+    </div>
 
-<div class="card">
-    <h3>CNC Machining Projects</h3>
-    <p>Turner’s Cube, Aluminum LEGO Brick, Thor’s Hammer, Chess Pieces</p>
-</div>
+    <h2>Projects</h2>
 
-<div class="card">
-    <h3>Robotic Arm</h3>
-    <p>Designed, modeled, and prototyped a 4-DOF robotic arm using CAD and Arduino</p>
-</div>
+    <div class="card">
+        <h3>CNC Machining Projects</h3>
+        <p>
+            Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning. 
+            Applied setup planning, precision tolerancing, and CAD/CAM workflows to ensure accuracy and functionality.
+        </p>
+    </div>
 
-<div class="card">
-    <h3>Circuits & PCB Design</h3>
-    <p>AC/DC circuit analysis, PCB design, soldering, and testing</p>
-</div>
+    <div class="card">
+        <h3>Robotic Arm – Gen-1</h3>
+        <p>
+            Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing. 
+            Integrated control systems and mechanical design to achieve smooth motion and functional performance.
+        </p>
+    </div>
 
-<div class="card">
-    <h3>Cybersecurity</h3>
-    <p>Cryptography, system security, vulnerability analysis using Python</p>
-</div>
+    <div class="card">
+        <h3>Circuits & PCB Design</h3>
+        <p>
+            Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, and testing using KiCad, LTSpice, and lab instrumentation.
+        </p>
+    </div>
 
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
+    <div class="card">
+        <h3>Cybersecurity</h3>
+        <p>
+            Studied cryptography, system security, vulnerability analysis, and secure coding practices, applying Python for basic security-focused tasks.
+        </p>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="card">
+        <p>
+            Java, Python, R, Siemens NX, Inventor, MATLAB, LTSpice, KiCad, CNC machining, CAD/CAM, 3D printing, laser cutting, PCB design, soldering, cybersecurity concepts
+        </p>
+    </div>
+
+    <h2>Resume</h2>
+    <div class="card">
+        <p>
+            <a href="Brenna_Kark_Resume.pdf" target="_blank">Download My Resume</a>
+        </p>
+    </div>
+
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your@email.com</p>
+        <p>LinkedIn: add your link here</p>
+    </div>
 
 </body>
 </html>
