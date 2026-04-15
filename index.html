@@ -55,23 +55,6 @@
             animation: fadeUp 1s ease;
         }
 
-        /* 🔥 HEADSHOT STYLE */
-        .headshot {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px;
-            border: 3px solid rgba(255,255,255,0.2);
-            box-shadow: 0 0 25px rgba(77,166,255,0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .headshot:hover {
-            transform: scale(1.05);
-        }
-
         .hero-badge {
             display: inline-block;
             padding: 10px 18px;
@@ -315,29 +298,148 @@
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<section class="hero">
-    <img src="headshot.jpg" class="headshot">
+    <section class="hero">
+        <div class="hero-badge">Engineering Portfolio</div>
+        <h1>Brenna Kark</h1>
+        <p>
+            Mechanical Manufacturing Engineering Technology student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity.
+        </p>
+        <div class="button-row">
+            <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-secondary" href="#projects">View Projects</a>
+        </div>
+    </section>
 
-    <div class="hero-badge">Engineering Portfolio</div>
-    <h1>Brenna Kark</h1>
-    <p>
-        Mechanical Manufacturing Engineering Technology student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and cybersecurity.
-    </p>
-    <div class="button-row">
-        <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Download Resume</a>
-        <a class="btn btn-secondary" href="#projects">View Projects</a>
-    </div>
-</section>
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p class="about-text">
+                I am an engineering student who enjoys building, designing, and solving real-world problems through technical projects, prototyping, and manufacturing processes. My work includes CNC machining, CAD/CAM, robotics, PCB design, circuit analysis, and cybersecurity coursework.
+            </p>
+        </div>
+    </section>
 
-<!-- EVERYTHING ELSE REMAINS THE SAME -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+            A collection of technical projects that reflect my interests in manufacturing, mechanical design, electronics, and security.
+        </p>
 
+        <div class="card" style="margin-bottom: 24px;">
+            <h3 style="text-align:center; font-size:28px; margin-top:0;">CNC Machining Projects</h3>
+
+            <div class="featured-images">
+                <div>
+                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
+                    <p>Aluminum LEGO Brick</p>
+                </div>
+                <div>
+                    <img src="CubeJPG.jpg" alt="Turner’s Cube">
+                    <p>Turner’s Cube</p>
+                </div>
+                <div>
+                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                    <p>Mini Thor’s Hammer</p>
+                </div>
+                <div>
+                    <img src="PawnJPG.jpg" alt="Chess Piece">
+                    <p>Chess Piece</p>
+                </div>
+            </div>
+
+            <p style="color:#d0d0d0; line-height:1.8; text-align:center; max-width:860px; margin: 20px auto 0;">
+                Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning. Applied setup planning, precision tolerancing, repeatability, and CAD/CAM workflows to ensure fit, finish, and functionality.
+            </p>
+
+            <p style="text-align:center; margin-top: 16px;">
+                <a class="project-link" href="cnc-projects.html">View Full CNC Project Page</a>
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Robotic Arm – Gen-1</h3>
+                <p>
+                    Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.
+                </p>
+                <a class="project-link" href="robotic-arm.html">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Circuits & PCB Design</h3>
+                <p>
+                    Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, simulation, and testing using KiCad, LTSpice, and lab instrumentation.
+                </p>
+                <a class="project-link" href="circuits.html">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Cybersecurity</h3>
+                <p>
+                    Studied cryptography, system security, vulnerability analysis, and secure coding practices, applying Python for security-focused tasks.
+                </p>
+                <a class="project-link" href="cybersecurity.html">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="card">
+            <div class="skills-list">
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">R</span>
+                <span class="skill-pill">Siemens NX</span>
+                <span class="skill-pill">Inventor</span>
+                <span class="skill-pill">MATLAB</span>
+                <span class="skill-pill">LTSpice</span>
+                <span class="skill-pill">KiCad</span>
+                <span class="skill-pill">CNC Machining</span>
+                <span class="skill-pill">CAD/CAM</span>
+                <span class="skill-pill">3D Printing</span>
+                <span class="skill-pill">Laser Cutting</span>
+                <span class="skill-pill">PCB Design</span>
+                <span class="skill-pill">Soldering</span>
+                <span class="skill-pill">Cryptography</span>
+                <span class="skill-pill">System Security</span>
+                <span class="skill-pill">Vulnerability Analysis</span>
+                <span class="skill-pill">Secure Coding</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section">
+        <h2 class="section-title">Resume</h2>
+        <div class="card resume-box">
+            <p>Download my current resume below.</p>
+            <div class="button-row">
+                <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Open Resume PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="card contact-box">
+            <p>Email: brenna.kark19@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/brenna-kark-55332b329" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Brenna Kark · Built with GitHub Pages
+    </footer>
+
+</body>
+</html>
