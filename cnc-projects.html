@@ -4,89 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNC Projects | Brenna Kark</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: #0b0b0b;
+            background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
             color: white;
             padding: 40px 20px;
         }
+
         .container {
-            max-width: 950px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        h1 {
-            text-align: center;
-            font-size: 48px;
-        }
-        p {
-            color: #d0d0d0;
-            line-height: 1.8;
-            font-size: 18px;
-        }
+
         .back {
             display: inline-block;
             margin-bottom: 30px;
             color: #7cb8ff;
             text-decoration: none;
+            font-weight: 500;
         }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 18px;
             margin: 30px 0;
         }
+
         .grid div {
-            background: rgba(255,255,255,0.05);
-            border-radius: 18px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
             padding: 10px;
         }
+
         .grid img {
             width: 100%;
-            border-radius: 14px;
+            border-radius: 12px;
             display: block;
+            transition: transform 0.3s ease;
         }
+
+        .grid img:hover {
+            transform: scale(1.03);
+        }
+
         .grid p {
             font-size: 14px;
             text-align: center;
             margin: 10px 0 2px;
+            color: #cfcfcf;
         }
+
+        .hammer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hammer-grid div {
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+        .hammer-grid img {
+            width: 100%;
+            border-radius: 14px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hammer-grid img:hover {
+            transform: scale(1.04);
+        }
+
+        .hammer-grid p {
+            text-align: center;
+            font-size: 14px;
+            color: #cfcfcf;
+            margin-top: 8px;
+            margin-bottom: 2px;
+        }
+
+        .center-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+
         @media (max-width: 700px) {
-            .grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .grid,
+            .hammer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <a class="back" href="index.html">← Back to Home</a>
-        <h1>CNC Machining Projects</h1>
-        <p>
-            This project group includes a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces. Through these projects, I developed hands-on experience in CNC milling and turning, setup planning, toolpath execution, precision tolerancing, and dimensional accuracy.
-        </p>
 
-        <div class="grid">
-            <div>
-                <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
-                <p>Aluminum LEGO Brick</p>
+        <h1>CNC Machining Projects</h1>
+
+        <div class="card">
+            <p>
+                This project group includes a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces. Through these projects, I developed hands-on experience in CNC milling and turning, setup planning, toolpath execution, precision tolerancing, and dimensional accuracy.
+            </p>
+
+            <div class="grid">
+                <div>
+                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
+                    <p>Aluminum LEGO Brick</p>
+                </div>
+
+                <div>
+                    <img src="CubeJPG.jpg" alt="Turner’s Cube">
+                    <p>Turner’s Cube</p>
+                </div>
+
+                <div>
+                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                    <p>Mini Thor’s Hammer</p>
+                </div>
+
+                <div>
+                    <img src="PawnJPG.jpg" alt="Chess Piece">
+                    <p>Chess Piece</p>
+                </div>
             </div>
-            <div>
-                <img src="CubeJPG.jpg" alt="Turner’s Cube">
-                <p>Turner’s Cube</p>
-            </div>
-            <div>
-                <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
-                <p>Mini Thor’s Hammer</p>
-            </div>
-            <div>
-                <img src="PawnJPG.jpg" alt="Chess Piece">
-                <p>Chess Piece</p>
-            </div>
+
+            <p class="center-text">
+                These parts helped strengthen my understanding of CAD/CAM workflows, workholding, multiple setups, machining internal and external features, and producing parts with strong fit, finish, and repeatability.
+            </p>
         </div>
 
-        <p>
-            These parts helped strengthen my understanding of CAD/CAM workflows, workholding, multiple setups, machining internal and external features, and producing parts with strong fit, finish, and repeatability.
-        </p>
+        <div class="card">
+            <h2>Mini Thor’s Hammer</h2>
+
+            <div class="hammer-grid">
+                <div>
+                    <img src="hammer1.jpg" alt="Mini Thor's Hammer machining process">
+                    <p>Machining Process</p>
+                </div>
+
+                <div>
+                    <img src="hammer2.jpg" alt="Finished Mini Thor's Hammer">
+                    <p>Final Part</p>
+                </div>
+            </div>
+
+            <p class="center-text">
+                This project involved machining a mini Thor’s Hammer using multiple setups and complex geometry. Focus was placed on precision, alignment, and surface finish throughout the machining process.
+            </p>
+        </div>
+
     </div>
+
 </body>
 </html>
