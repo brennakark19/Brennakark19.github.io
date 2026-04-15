@@ -12,16 +12,16 @@
         }
 
         :root {
-            --bg: #07090c;
-            --bg-2: #0e1319;
-            --card: rgba(255, 255, 255, 0.06);
-            --card-border: rgba(255, 255, 255, 0.10);
+            --bg: #06080c;
+            --bg-soft: rgba(255,255,255,0.05);
+            --bg-softer: rgba(255,255,255,0.035);
+            --border: rgba(255,255,255,0.10);
             --text: #ffffff;
-            --muted: #c7ced8;
-            --soft: #9aa7b5;
-            --accent: #8cc7ff;
-            --accent-2: #c9e6ff;
-            --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            --muted: #c9d2dc;
+            --soft: #95a4b3;
+            --accent: #8ecaff;
+            --accent-strong: #d9efff;
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
         }
 
         body {
@@ -29,16 +29,16 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at top, rgba(84, 145, 204, 0.18), transparent 30%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 20%),
-                linear-gradient(180deg, #0a0d11 0%, #07090c 45%, #050608 100%);
+                radial-gradient(circle at top, rgba(105, 173, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 16%),
+                linear-gradient(180deg, #0a0d12 0%, #07090d 45%, #05070a 100%);
         }
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(8, 10, 14, 0.78);
+            background: rgba(8, 11, 15, 0.75);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
@@ -54,7 +54,7 @@
         }
 
         nav a {
-            color: #d8dee6;
+            color: #dce4ec;
             text-decoration: none;
             font-size: 15px;
             transition: color 0.25s ease, opacity 0.25s ease;
@@ -68,19 +68,22 @@
             max-width: 1100px;
             margin: 0 auto;
             text-align: center;
-            padding: 90px 20px 70px;
+            padding: 92px 20px 72px;
             animation: fadeUp 1s ease;
         }
 
         .headshot {
-            width: 170px;
-            height: 170px;
+            width: 175px;
+            height: 175px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
             margin: 0 auto 24px;
             border: 3px solid rgba(255,255,255,0.15);
-            box-shadow: 0 0 35px rgba(140, 199, 255, 0.22);
+            box-shadow:
+                0 0 0 10px rgba(255,255,255,0.03),
+                0 0 40px rgba(142, 202, 255, 0.16),
+                0 20px 45px rgba(0,0,0,0.35);
             transition: transform 0.3s ease;
         }
 
@@ -90,20 +93,20 @@
 
         .hero-badge {
             display: inline-block;
-            margin-bottom: 18px;
             padding: 10px 18px;
             border-radius: 999px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.10);
-            color: #dbe6f1;
+            color: #dde8f2;
             font-size: 14px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
             margin: 0 0 12px;
-            font-size: 72px;
-            letter-spacing: -2px;
+            font-size: 74px;
             line-height: 1;
+            letter-spacing: -2px;
         }
 
         .hero p {
@@ -128,7 +131,7 @@
             border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, color 0.25s ease;
+            transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .btn:hover {
@@ -137,11 +140,12 @@
 
         .btn-primary {
             background: white;
-            color: #0a0d11;
+            color: #0b0f14;
+            box-shadow: 0 10px 24px rgba(255,255,255,0.10);
         }
 
         .btn-primary:hover {
-            background: #edf4fb;
+            background: #eef5fb;
         }
 
         .btn-secondary {
@@ -157,7 +161,7 @@
         .section {
             max-width: 1120px;
             margin: 0 auto;
-            padding: 70px 20px;
+            padding: 72px 20px;
         }
 
         .section-title {
@@ -176,9 +180,9 @@
         }
 
         .card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 26px;
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 28px;
             padding: 30px;
             box-shadow: var(--shadow);
         }
@@ -189,7 +193,7 @@
             text-align: center;
             color: var(--muted);
             font-size: 18px;
-            line-height: 1.85;
+            line-height: 1.9;
         }
 
         .projects-grid {
@@ -200,7 +204,7 @@
         }
 
         .project-card {
-            background: rgba(255,255,255,0.05);
+            background: var(--bg-softer);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 24px;
             padding: 24px;
@@ -210,8 +214,8 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 22px 45px rgba(0,0,0,0.34);
-            border-color: rgba(140, 199, 255, 0.25);
+            box-shadow: 0 24px 46px rgba(0,0,0,0.34);
+            border-color: rgba(142, 202, 255, 0.22);
         }
 
         .project-card h3 {
@@ -234,7 +238,7 @@
         }
 
         .project-link:hover {
-            color: var(--accent-2);
+            color: var(--accent-strong);
             text-decoration: underline;
         }
 
@@ -291,7 +295,7 @@
             border-radius: 999px;
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.08);
-            color: #e9eef4;
+            color: #eaf0f6;
             font-size: 15px;
             transition: transform 0.22s ease, background 0.22s ease;
         }
@@ -319,14 +323,14 @@
         }
 
         .contact-box a:hover {
-            color: var(--accent-2);
+            color: var(--accent-strong);
             text-decoration: underline;
         }
 
         footer {
             text-align: center;
-            color: #8c97a5;
-            padding: 38px 20px 56px;
+            color: #8b97a4;
+            padding: 40px 20px 58px;
             font-size: 14px;
         }
 
@@ -343,7 +347,7 @@
 
         @media (max-width: 760px) {
             .hero {
-                padding-top: 70px;
+                padding-top: 72px;
             }
 
             .hero h1 {
@@ -363,8 +367,8 @@
             }
 
             .headshot {
-                width: 145px;
-                height: 145px;
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
@@ -386,7 +390,7 @@
         <div class="hero-badge">Engineering Portfolio</div>
         <h1>Brenna Kark</h1>
         <p>
-             Technology Engineering student with a concentration in CyberSecurity. 
+             Technology Engineering student with hands-on experience in CNC machining, CAD/CAM, robotics, circuits, and a Concentration in CyberSecurity.
         </p>
         <div class="button-row">
             <a class="btn btn-primary" href="Brenna_Kark_Resume.pdf" target="_blank">Download Resume</a>
