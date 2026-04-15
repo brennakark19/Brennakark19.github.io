@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC Projects | Brenna Kark</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 48px;
+        }
+        p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        .back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #7cb8ff;
+            text-decoration: none;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+        .grid div {
+            background: rgba(255,255,255,0.05);
+            border-radius: 18px;
+            padding: 10px;
+        }
+        .grid img {
+            width: 100%;
+            border-radius: 14px;
+            display: block;
+        }
+        .grid p {
+            font-size: 14px;
+            text-align: center;
+            margin: 10px 0 2px;
+        }
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="index.html">← Back to Home</a>
+        <h1>CNC Machining Projects</h1>
+        <p>
+            This project group includes a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces. Through these projects, I developed hands-on experience in CNC milling and turning, setup planning, toolpath execution, precision tolerancing, and dimensional accuracy.
+        </p>
+
+        <div class="grid">
+            <div>
+                <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
+                <p>Aluminum LEGO Brick</p>
+            </div>
+            <div>
+                <img src="CubeJPG.jpg" alt="Turner’s Cube">
+                <p>Turner’s Cube</p>
+            </div>
+            <div>
+                <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                <p>Mini Thor’s Hammer</p>
+            </div>
+            <div>
+                <img src="PawnJPG.jpg" alt="Chess Piece">
+                <p>Chess Piece</p>
+            </div>
+        </div>
+
+        <p>
+            These parts helped strengthen my understanding of CAD/CAM workflows, workholding, multiple setups, machining internal and external features, and producing parts with strong fit, finish, and repeatability.
+        </p>
+    </div>
+</body>
+</html>
