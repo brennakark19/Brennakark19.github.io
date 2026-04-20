@@ -1,533 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brenna Kark | Engineering Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brenna Kark | Engineering Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #06080c;
-            --bg-soft: rgba(255,255,255,0.05);
-            --bg-softer: rgba(255,255,255,0.035);
-            --border: rgba(255,255,255,0.10);
-            --text: #ffffff;
-            --muted: #c9d2dc;
-            --soft: #95a4b3;
-            --accent: #8ecaff;
-            --accent-strong: #d9efff;
-            --shadow: 0 20px 60px rgba(0,0,0,0.35);
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top, rgba(105, 173, 255, 0.18), transparent 30%),
-                radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 16%),
-                linear-gradient(180deg, #0a0d12 0%, #07090d 45%, #05070a 100%);
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(8, 11, 15, 0.75);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 18px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 28px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #dce4ec;
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.25s ease, opacity 0.25s ease;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        .hero {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 92px 20px 72px;
-            animation: fadeUp 1s ease;
-        }
-
-        .headshot {
-            width: 175px;
-            height: 175px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 24px;
-            border: 3px solid rgba(255,255,255,0.15);
-            box-shadow:
-                0 0 0 10px rgba(255,255,255,0.03),
-                0 0 40px rgba(142, 202, 255, 0.16),
-                0 20px 45px rgba(0,0,0,0.35);
-            transition: transform 0.3s ease;
-        }
-
-        .headshot:hover {
-            transform: scale(1.03);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 10px 18px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.10);
-            color: #dde8f2;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            margin: 0 0 12px;
-            font-size: 74px;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-
-        .hero p {
-            max-width: 780px;
-            margin: 0 auto;
-            color: var(--muted);
-            font-size: 21px;
-            line-height: 1.7;
-        }
-
-        .button-row {
-            margin-top: 34px;
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 24px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: white;
-            color: #0b0f14;
-            box-shadow: 0 10px 24px rgba(255,255,255,0.10);
-        }
-
-        .btn-primary:hover {
-            background: #eef5fb;
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.10);
-        }
-
-        .section {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 72px 20px;
-        }
-
-        .section-title {
-            margin: 0 0 14px;
-            text-align: center;
-            font-size: 40px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            max-width: 760px;
-            margin: 0 auto 30px;
-            text-align: center;
-            color: var(--soft);
-            line-height: 1.7;
-        }
-
-        .card {
-            background: var(--bg-soft);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-text {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            color: var(--muted);
-            font-size: 18px;
-            line-height: 1.9;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-            margin-top: 24px;
-        }
-
-        .project-card {
-            background: var(--bg-softer);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 24px;
-            padding: 24px;
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-            box-shadow: 0 14px 34px rgba(0,0,0,0.25);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 46px rgba(0,0,0,0.34);
-            border-color: rgba(142, 202, 255, 0.22);
-        }
-
-        .project-card h3 {
-            margin: 0 0 12px;
-            font-size: 24px;
-        }
-
-        .project-card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.75;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 14px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .project-link:hover {
-            color: var(--accent-strong);
-            text-decoration: underline;
-        }
-
-        .featured-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin: 24px 0 8px;
-        }
-
-        .featured-images div {
-            background: rgba(255,255,255,0.04);
-            border-radius: 20px;
-            padding: 10px;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .featured-images img {
-    width: 100%;
-    height: 240px;
-    object-fit: contain;
-    display: block;
-    border-radius: 14px;
-    background: #2a3854;
-    padding: 12px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
+<style>
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
-        
 
-        .featured-images img:hover {
-            transform: scale(1.03);
-            opacity: 0.96;
-        }
+:root{
+    --bg:#06080c;
+    --bg-soft:rgba(255,255,255,.05);
+    --bg-softer:rgba(255,255,255,.035);
+    --border:rgba(255,255,255,.10);
+    --text:#ffffff;
+    --muted:#c9d2dc;
+    --soft:#95a4b3;
+    --accent:#8ecaff;
+    --accent-strong:#d9efff;
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+}
 
-        .featured-images p {
-            margin: 10px 0 2px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 14px;
-        }
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--text);
+    background:
+    radial-gradient(circle at top, rgba(105,173,255,.18), transparent 30%),
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,.08), transparent 16%),
+    linear-gradient(180deg,#0a0d12 0%,#07090d 45%,#05070a 100%);
+}
 
-        .cnc-text {
-            color: var(--muted);
-            line-height: 1.85;
-            text-align: center;
-            max-width: 860px;
-            margin: 22px auto 0;
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,11,15,.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
+nav ul{
+    list-style:none;
+    margin:0;
+    padding:18px 20px;
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+}
 
-        .skill-pill {
-            padding: 10px 16px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.08);
-            color: #eaf0f6;
-            font-size: 15px;
-            transition: transform 0.22s ease, background 0.22s ease;
-        }
+nav a{
+    color:#dce4ec;
+    text-decoration:none;
+    font-size:15px;
+}
 
-        .skill-pill:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.10);
-        }
+nav a:hover{
+    color:white;
+}
 
-        .resume-box,
-        .contact-box {
-            text-align: center;
-        }
+.hero{
+    max-width:1100px;
+    margin:0 auto;
+    text-align:center;
+    padding:92px 20px 72px;
+}
 
-        .resume-box p,
-        .contact-box p {
-            color: var(--muted);
-            font-size: 18px;
-            line-height: 1.7;
-        }
+.headshot{
+    width:175px;
+    height:175px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin:0 auto 24px;
+    border:3px solid rgba(255,255,255,.15);
+    box-shadow:
+    0 0 0 10px rgba(255,255,255,.03),
+    0 0 40px rgba(142,202,255,.16),
+    0 20px 45px rgba(0,0,0,.35);
+}
 
-        .contact-box a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+.hero-badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    color:#dde8f2;
+    font-size:14px;
+    margin-bottom:18px;
+}
 
-        .contact-box a:hover {
-            color: var(--accent-strong);
-            text-decoration: underline;
-        }
+.hero h1{
+    margin:0 0 12px;
+    font-size:74px;
+    line-height:1;
+}
 
-        footer {
-            text-align: center;
-            color: #8b97a4;
-            padding: 40px 20px 58px;
-            font-size: 14px;
-        }
+.hero p{
+    max-width:760px;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:21px;
+    line-height:1.7;
+}
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(26px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.button-row{
+    margin-top:34px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
 
-        @media (max-width: 760px) {
-            .hero {
-                padding-top: 72px;
-            }
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+}
 
-            .hero h1 {
-                font-size: 50px;
-            }
+.btn-primary{
+    background:white;
+    color:#0b0f14;
+}
 
-            .hero p {
-                font-size: 18px;
-            }
+.btn-secondary{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
+}
 
-            .featured-images {
-                grid-template-columns: 1fr;
-            }
+.section{
+    max-width:1120px;
+    margin:0 auto;
+    padding:72px 20px;
+}
 
-            .section-title {
-                font-size: 32px;
-            }
+.section-title{
+    margin:0 0 14px;
+    text-align:center;
+    font-size:40px;
+}
 
-            .headshot {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
+.section-subtitle{
+    max-width:760px;
+    margin:0 auto 30px;
+    text-align:center;
+    color:var(--soft);
+    line-height:1.7;
+}
+
+.card{
+    background:var(--bg-soft);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.about-text{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+    color:var(--muted);
+    line-height:1.9;
+}
+
+.featured-images{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin:24px 0 8px;
+}
+
+.featured-images div{
+    background:rgba(255,255,255,.04);
+    border-radius:20px;
+    padding:10px;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.featured-images img{
+    width:100%;
+    height:240px;
+    object-fit:contain;
+    display:block;
+    border-radius:14px;
+    background:#2a3854;
+    padding:6px;
+    margin-bottom:10px;
+}
+
+.featured-images p{
+    margin:10px 0 2px;
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+    margin-top:24px;
+}
+
+.project-card{
+    background:var(--bg-softer);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:24px;
+}
+
+.project-card h3{
+    margin:0 0 12px;
+    font-size:24px;
+}
+
+.project-card p{
+    margin:0;
+    color:var(--muted);
+    line-height:1.75;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:14px;
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.skills-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+}
+
+.skill-pill{
+    padding:10px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    color:#eaf0f6;
+    font-size:15px;
+}
+
+.resume-box,
+.contact-box{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    color:#8b97a4;
+    padding:40px 20px 58px;
+    font-size:14px;
+}
+
+@media(max-width:760px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.featured-images{
+    grid-template-columns:1fr;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+.headshot{
+    width:150px;
+    height:150px;
+}
+
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <section class="hero">
-        <img src="headshot.jpg" class="headshot" alt="Brenna Kark headshot">
-        <div class="hero-badge">Engineering Portfolio</div>
-        <h1>Brenna Kark</h1>
-        <p>
-             Technology Engineering student with a Concentration in CyberSecurity.
-        </p>
-        <div class="button-row">
-            <a class="btn btn-primary" href="Resume2026.pdf" target="_blank">Download Resume</a>
-            <a class="btn btn-secondary" href="#projects">View Projects</a>
-        </div>
-    </section>
+<section class="hero">
+<img src="headshot.jpg" class="headshot" alt="Brenna Kark Headshot">
 
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="card">
-            <p class="about-text">
-                I am an engineering student who enjoys building, designing, and solving real-world problems through technical projects, prototyping, and manufacturing processes. My work includes CNC machining, CAD/CAM, robotics, PCB design, circuit analysis, and cybersecurity.
-            </p>
-        </div>
-    </section>
+<div class="hero-badge">Engineering Portfolio</div>
 
-    <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">
-            A collection of technical projects that reflect my interests in manufacturing, mechanical design, electronics, and security.
-        </p>
+<h1>Brenna Kark</h1>
 
-        <div class="card" style="margin-bottom: 24px;">
-            <h3 style="text-align:center; font-size:28px; margin-top:0;">CNC Machining Projects</h3>
+<p>
+Technology Engineering student with a concentration in Cybersecurity.
+</p>
 
-            <div class="featured-images">
-                <div>
-                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
-                    <img src="lego.jpg">
-                    <p>Aluminum LEGO Brick</p>
-                </div>
-                <div>
-                    <img src="CubeJPG.jpg" alt="Turner’s Cube">
-                    <img src="cube.jpg">
-                    <p>Turner’s Cube</p>
-                </div>
-                <div>
-                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
-                    <p>Mini Thor’s Hammer</p>
-                </div>
-                <div>
-                    <img src="PawnJPG.jpg" alt="Chess Piece">
-                    <img src="chess.jpg">
-                    <p>Chess Piece</p>
-                </div>
-            </div>
+<div class="button-row">
+<a class="btn btn-primary" href="Resume2026.pdf" target="_blank">Download Resume</a>
+<a class="btn btn-secondary" href="#projects">View Projects</a>
+</div>
+</section>
 
-            <p class="cnc-text">
-                Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning. Applied setup planning, precision tolerancing, repeatability, and CAD/CAM workflows to ensure fit, finish, and functionality.
-            </p>
+<section id="about" class="section">
+<h2 class="section-title">About Me</h2>
 
-            <p style="text-align:center; margin-top: 16px;">
-                <a class="project-link" href="cnc-projects.html">View Full CNC Project Page</a>
-            </p>
-        </div>
+<div class="card">
+<p class="about-text">
+I am an engineering student who enjoys building, designing, and solving real-world problems through technical projects, prototyping, and manufacturing processes. My work includes CNC machining, CAD/CAM, robotics, PCB design, circuit analysis, and cybersecurity.
+</p>
+</div>
+</section>
 
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Robotic Arm – Gen-1</h3>
-                <p>
-                    Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.
-                </p>
-                <a class="project-link" href="robotic-arm.html">View Project</a>
-            </div>
+<section id="projects" class="section">
 
-            <div class="project-card">
-                <h3>Circuits & PCB Design</h3>
-                <p>
-                    Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, simulation, and testing using KiCad, LTSpice, and lab instrumentation.
-                </p>
-                <a class="project-link" href="circuits.html">View Project</a>
-            </div>
+<h2 class="section-title">Projects</h2>
 
-            <div class="project-card">
-                <h3>Cybersecurity</h3>
-                <p>
-                    Studied cryptography, system security, vulnerability analysis, and secure coding practices, applying Python for security-focused tasks.
-                </p>
-                <a class="project-link" href="cybersecurity.html">View Project</a>
-            </div>
-        </div>
-    </section>
+<p class="section-subtitle">
+A collection of technical projects that reflect my interests in manufacturing, mechanical design, electronics, and security.
+</p>
 
-    <section id="skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="card">
-            <div class="skills-list">
-                <span class="skill-pill">Java</span>
-                <span class="skill-pill">Python</span>
-                <span class="skill-pill">R</span>
-                <span class="skill-pill">Siemens NX</span>
-                <span class="skill-pill">Inventor</span>
-                <span class="skill-pill">MATLAB</span>
-                <span class="skill-pill">LTSpice</span>
-                <span class="skill-pill">KiCad</span>
-                <span class="skill-pill">CNC Machining</span>
-                <span class="skill-pill">CAD/CAM</span>
-                <span class="skill-pill">3D Printing</span>
-                <span class="skill-pill">Laser Cutting</span>
-                <span class="skill-pill">PCB Design</span>
-                <span class="skill-pill">Soldering</span>
-                <span class="skill-pill">Cryptography</span>
-                <span class="skill-pill">System Security</span>
-                <span class="skill-pill">Vulnerability Analysis</span>
-                <span class="skill-pill">Secure Coding</span>
-            </div>
-        </div>
-    </section>
+<div class="card">
 
-    <section id="resume" class="section">
-        <h2 class="section-title">Resume</h2>
-        <div class="card resume-box">
-            <p>Download my current resume below.</p>
-            <div class="button-row">
-                <a class="btn btn-primary" href="Resume2026.pdf" target="_blank">Open Resume PDF</a>
-            </div>
-        </div>
-    </section>
+<h3 style="text-align:center;font-size:28px;margin-top:0;">CNC Machining Projects</h3>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">Contact</h2>
-        <div class="card contact-box">
-            <p>Email: brenna.kark19@gmail.com</p>
-            <p>Number: 248-326-4822</p>
-            <p><a href="https://www.linkedin.com/in/brenna-kark-55332b329" target="_blank">LinkedIn Profile</a></p>
-        </div>
-    </section>
+<div class="featured-images">
 
-    <footer>
-        © 2026 Brenna Kark · Built with GitHub Pages
-    </footer>
+<div>
+<img src="legoJPG.jpg" alt="Aluminum LEGO Brick CAD Model">
+<img src="lego.jpg" alt="Finished Aluminum LEGO Brick">
+<p>Aluminum LEGO Brick</p>
+</div>
+
+<div>
+<img src="CubeJPG.jpg" alt="Turners Cube CAD Model">
+<img src="cube.jpg" alt="Finished Turners Cube">
+<p>Turner’s Cube</p>
+</div>
+
+<div>
+<img src="TopHammerJPG.jpg" alt="Mini Thors Hammer CAD Model">
+<p>Mini Thor’s Hammer</p>
+</div>
+
+<div>
+<img src="PawnJPG.jpg" alt="Chess Piece CAD Model">
+<img src="chess.jpg" alt="Finished Chess Piece">
+<p>Chess Piece</p>
+</div>
+
+</div>
+
+<p style="text-align:center; color:#c9d2dc; line-height:1.8;">
+Machined a Turner’s Cube, aluminum LEGO brick, mini Thor’s Hammer, and custom chess pieces using CNC milling and turning.
+</p>
+
+<p style="text-align:center;">
+<a class="project-link" href="cnc-projects.html">View Full CNC Project Page</a>
+</p>
+
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<h3>Robotic Arm – Gen-1</h3>
+<p>Reverse-engineered, modeled, prototyped, and tested a 4-DOF robotic arm using Siemens NX, Arduino, KiCad, and 3D printing.</p>
+<a class="project-link" href="robotic-arm.html">View Project</a>
+</div>
+
+<div class="project-card">
+<h3>Circuits & PCB Design</h3>
+<p>Completed hands-on work in AC/DC circuit analysis, PCB design, soldering, simulation, and testing using KiCad, LTSpice, and lab instrumentation.</p>
+<a class="project-link" href="circuits.html">View Project</a>
+</div>
+
+<div class="project-card">
+<h3>Cybersecurity</h3>
+<p>Studied cryptography, system security, vulnerability analysis, and secure coding practices.</p>
+<a class="project-link" href="cybersecurity.html">View Project</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills" class="section">
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="card">
+<div class="skills-list">
+<span class="skill-pill">Java</span>
+<span class="skill-pill">Python</span>
+<span class="skill-pill">R</span>
+<span class="skill-pill">Siemens NX</span>
+<span class="skill-pill">Inventor</span>
+<span class="skill-pill">MATLAB</span>
+<span class="skill-pill">LTSpice</span>
+<span class="skill-pill">KiCad</span>
+<span class="skill-pill">CNC Machining</span>
+<span class="skill-pill">CAD/CAM</span>
+<span class="skill-pill">3D Printing</span>
+<span class="skill-pill">Laser Cutting</span>
+<span class="skill-pill">PCB Design</span>
+<span class="skill-pill">Soldering</span>
+<span class="skill-pill">Cryptography</span>
+<span class="skill-pill">System Security</span>
+</div>
+</div>
+</section>
+
+<section id="resume" class="section">
+<h2 class="section-title">Resume</h2>
+
+<div class="card resume-box">
+<p>Download my current resume below.</p>
+<div class="button-row">
+<a class="btn btn-primary" href="Resume2026.pdf" target="_blank">Open Resume PDF</a>
+</div>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2 class="section-title">Contact</h2>
+
+<div class="card contact-box">
+<p>Email: brenna.kark19@gmail.com</p>
+<p>Phone: 248-326-4822</p>
+<p><a class="project-link" href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+</div>
+</section>
+
+<footer>
+© 2026 Brenna Kark · Built with GitHub Pages
+</footer>
 
 </body>
 </html>
