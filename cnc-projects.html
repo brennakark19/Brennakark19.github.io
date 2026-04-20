@@ -8,27 +8,44 @@
     <style>
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #06080c;
+            --bg-soft: rgba(255,255,255,0.05);
+            --bg-softer: rgba(255,255,255,0.035);
+            --border: rgba(255,255,255,0.10);
+            --text: #ffffff;
+            --muted: #c9d2dc;
+            --soft: #95a4b3;
+            --accent: #8ecaff;
+            --accent-strong: #d9efff;
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
         }
 
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
-            color: white;
+            color: var(--text);
             padding: 40px 20px;
+            background:
+                radial-gradient(circle at top, rgba(105, 173, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 16%),
+                linear-gradient(180deg, #0a0d12 0%, #07090d 45%, #05070a 100%);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .back {
             display: inline-block;
-            margin-bottom: 30px;
-            color: #7cb8ff;
+            margin-bottom: 28px;
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .back:hover {
@@ -37,107 +54,107 @@
 
         h1 {
             text-align: center;
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 54px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         h2 {
             text-align: center;
-            font-size: 30px;
-            margin-top: 50px;
-            margin-bottom: 20px;
+            font-size: 34px;
+            margin: 0 0 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--soft);
+            max-width: 760px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+            font-size: 17px;
         }
 
         p {
-            color: #d0d0d0;
+            color: var(--muted);
             line-height: 1.8;
             font-size: 18px;
         }
 
         .card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            margin-bottom: 30px;
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            margin-bottom: 28px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            margin: 30px 0;
-        }
-
-        .grid div {
-            background: rgba(255,255,255,0.04);
-            border-radius: 16px;
-            padding: 10px;
-        }
-
-        .grid img {
-            width: 100%;
-            border-radius: 12px;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .grid img:hover {
-            transform: scale(1.03);
-        }
-
-        .grid p {
-            font-size: 14px;
-            text-align: center;
-            margin: 10px 0 2px;
-            color: #cfcfcf;
-        }
-
+        .grid,
         .hammer-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 24px;
         }
 
+        .grid div,
         .hammer-grid div {
-            background: rgba(255,255,255,0.04);
-            border-radius: 16px;
-            padding: 10px;
+            background: var(--bg-softer);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 16px;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            box-shadow: 0 14px 34px rgba(0,0,0,0.25);
         }
 
+        .grid div:hover,
+        .hammer-grid div:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 46px rgba(0,0,0,0.34);
+            border-color: rgba(142, 202, 255, 0.22);
+        }
+
+        .grid img,
         .hammer-grid img {
             width: 100%;
-            border-radius: 14px;
+            height: 240px;
+            object-fit: contain;
             display: block;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            background: linear-gradient(145deg, #243b63, #1a2942);
+            padding: 12px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
+        .grid img:hover,
         .hammer-grid img:hover {
-            transform: scale(1.04);
+            transform: scale(1.02);
+            opacity: 0.97;
         }
 
+        .grid p,
         .hammer-grid p {
-            text-align: center;
             font-size: 14px;
-            color: #cfcfcf;
-            margin-top: 8px;
-            margin-bottom: 2px;
+            text-align: center;
+            color: var(--muted);
+            margin: 8px 0 2px;
         }
 
         .center-text {
             text-align: center;
-            max-width: 800px;
-            margin: 20px auto 0;
+            max-width: 850px;
+            margin: 22px auto 0;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 760px) {
             h1 {
-                font-size: 36px;
+                font-size: 40px;
             }
 
             h2 {
-                font-size: 26px;
+                font-size: 28px;
             }
 
             p {
@@ -148,6 +165,11 @@
             .hammer-grid {
                 grid-template-columns: 1fr;
             }
+
+            .grid img,
+            .hammer-grid img {
+                height: 220px;
+            }
         }
     </style>
 </head>
@@ -157,6 +179,7 @@
         <a class="back" href="index.html">← Back to Home</a>
 
         <h1>CNC Machining Projects</h1>
+        <p class="subtitle">CAD • CAM • CNC Milling • Turning • Precision Manufacturing</p>
 
         <div class="card">
             <p>
@@ -165,25 +188,25 @@
 
             <div class="grid">
                 <div>
-                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick">
-                    <img src="lego.jpg" alt="LEGO Project">
+                    <img src="legoJPG.jpg" alt="Aluminum LEGO Brick CAD model">
+                    <img src="lego.jpg" alt="Aluminum LEGO Brick finished part">
                     <p>Aluminum LEGO Brick</p>
                 </div>
 
                 <div>
-                    <img src="CubeJPG.jpg" alt="Turner’s Cube">
-                    <img src="cube.jpg" alt="Turner's Cube Project">
+                    <img src="CubeJPG.jpg" alt="Turner’s Cube CAD model">
+                    <img src="cube.jpg" alt="Turner’s Cube finished part">
                     <p>Turner’s Cube</p>
                 </div>
 
                 <div>
-                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer">
+                    <img src="TopHammerJPG.jpg" alt="Mini Thor’s Hammer CAD model">
                     <p>Mini Thor’s Hammer</p>
                 </div>
 
                 <div>
-                    <img src="PawnJPG.jpg" alt="Chess Piece">
-                    <img src="chess.jpg" alt="Chess Piece">
+                    <img src="PawnJPG.jpg" alt="Chess Piece CAD model">
+                    <img src="chess.jpg" alt="Chess Piece finished part">
                     <p>Chess Piece</p>
                 </div>
             </div>
