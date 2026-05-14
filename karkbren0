@@ -3,3 +3,16 @@ int main() {
 std::cout << "Go Green, Go White!" << std::endl;
 return 0;
 }
+
+
+
+#include <iostream>
+
+double SplitInHalf(double a) {
+    return a / 2;
+}
+
+int main() {
+    std::cout << SplitInHalf(10) << std::endl;
+    return 0;
+}
