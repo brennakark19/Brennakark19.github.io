@@ -1,10 +1,4 @@
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    cout << "Hello World!" << endl;
-    cout << "Author: Brenna Kark" << endl;
-
-    return 0;
-}
+git status
+git add main.cpp
+git commit -m "Added main.cpp"
+git push
